@@ -5,21 +5,21 @@ local RunService = game:GetService("RunService")
 local LocalPlayer = game:GetService("Players").LocalPlayer
 local Mouse = LocalPlayer:GetMouse()
 local HttpService = game:GetService("HttpService")
---local pfp
-local user
-local tag
+local pfp = 0
+local user = 0
+local tag = 0
 local userinfo = {}
 
 pcall(function()
 	userinfo = HttpService:JSONDecode(readfile("discordlibinfo.txt"));
 end)
 
---pfp = userinfo["pfp"] or "https://www.roblox.com/headshot-thumbnail/image?userId=".. game.Players.LocalPlayer.UserId .."&width=420&height=420&format=png"
+pfp = userinfo["pfp"] or "https://www.roblox.com/headshot-thumbnail/image?userId=".. game.Players.LocalPlayer.UserId .."&width=420&height=420&format=png"
 user =  userinfo["user"] or game.Players.LocalPlayer.Name
 tag = userinfo["tag"] or tostring(math.random(1000,9999))
 
 local function SaveInfo()
---	userinfo["pfp"] = pfp
+	userinfo["pfp"] = pfp
 	userinfo["user"] = user
 	userinfo["tag"] = tag
 	writefile("discordlibinfo.txt", HttpService:JSONEncode(userinfo));
@@ -219,7 +219,7 @@ function DiscordLib:Window(text)
 	UserImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	UserImage.BackgroundTransparency = 1.000
 	UserImage.Size = UDim2.new(0, 32, 0, 32)
---	UserImage.Image = pfp 
+	UserImage.Image = pfp 
 	
 	UserCircleImage.Name = "UserImage"
 	UserCircleImage.Parent = UserImage
@@ -632,7 +632,7 @@ function DiscordLib:Window(text)
 	UserPanelUserImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	UserPanelUserImage.BackgroundTransparency = 1.000
 	UserPanelUserImage.Size = UDim2.new(0, 71, 0, 71)
---	UserPanelUserImage.Image = pfp
+	UserPanelUserImage.Image = pfp
 
 	UserPanelUserCircle.Name = "UserPanelUserCircle"
 	UserPanelUserCircle.Parent = UserPanelUserImage
@@ -859,7 +859,7 @@ function DiscordLib:Window(text)
 		end)
 
 		ChangeBtn.MouseButton1Click:Connect(function()
-		--[[	pfp = tostring(AvatarTextbox.Text)
+			pfp = tostring(AvatarTextbox.Text)
 			UserImage.Image = pfp 
 			UserPanelUserImage.Image = pfp
 			SaveInfo()
@@ -877,7 +877,6 @@ function DiscordLib:Window(text)
 			):Play()
 			wait(.2)
 			NotificationHolder:Destroy()
-            ]]
 		end)
 
 		
@@ -933,7 +932,6 @@ function DiscordLib:Window(text)
 		ResetBtn.TextSize = 13.000
 		
 		ResetBtn.MouseButton1Click:Connect(function()
-            --[[
 			pfp = "https://www.roblox.com/headshot-thumbnail/image?userId=".. game.Players.LocalPlayer.UserId .."&width=420&height=420&format=png"
 			UserImage.Image = pfp 
 			UserPanelUserImage.Image = pfp
@@ -952,7 +950,6 @@ function DiscordLib:Window(text)
 			):Play()
 			wait(.2)
 			NotificationHolder:Destroy()
-            ]]
 		end)
 
 		ResetCorner.CornerRadius = UDim.new(0, 4)
