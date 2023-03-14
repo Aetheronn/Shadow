@@ -16,7 +16,6 @@ user =  game.Players.LocalPlayer.Name
 tag = tostring(math.random(1000,9999))
 
 
-
 local function MakeDraggable(topbarobject, object)
 	local Dragging = nil
 	local DragInput = nil
