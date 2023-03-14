@@ -8,22 +8,14 @@ local HttpService = game:GetService("HttpService")
 local pfp = 0
 local user = 0
 local tag = 0
-local userinfo = {}
 
-pcall(function()
-	userinfo = HttpService:JSONDecode(readfile("discordlibinfo.txt"));
-end)
 
-pfp = userinfo["pfp"] or "https://www.roblox.com/headshot-thumbnail/image?userId=".. game.Players.LocalPlayer.UserId .."&width=420&height=420&format=png"
-user =  userinfo["user"] or game.Players.LocalPlayer.Name
-tag = userinfo["tag"] or tostring(math.random(1000,9999))
 
-local function SaveInfo()
-	userinfo["pfp"] = pfp
-	userinfo["user"] = user
-	userinfo["tag"] = tag
-	writefile("discordlibinfo.txt", HttpService:JSONEncode(userinfo));
-end
+pfp = "https://www.roblox.com/headshot-thumbnail/image?userId=".. game.Players.LocalPlayer.UserId .."&width=420&height=420&format=png"
+user =  game.Players.LocalPlayer.Name
+tag = tostring(math.random(1000,9999))
+
+
 
 local function MakeDraggable(topbarobject, object)
 	local Dragging = nil
