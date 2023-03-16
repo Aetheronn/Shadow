@@ -1,1 +1,1 @@
-game.Players.LocalPlayer:Kick("Axiom v1.7 is currently down, Please be patient as we release Axiom v.1.8, JK, V2,\nMeanwhile Roville Devs : Axiom is down now it's gonna be a peaceful life for us, Aetheron: You got the wrong number")
+game.Players.LocalPlayer:Kick("Axiom v1.7 is currently down, Please be patient as we release Axiom v.1.8, JK, V2")
