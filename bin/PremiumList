@@ -1,5 +1,3 @@
-local list = {}
-  local list.whitelists = {
-    "099DC0B3-EED3-40B0-9ED0-4608E56FFFC6"
-  }
-return list
+return {
+  "099DC0B3-EED3-40B0-9ED0-4608E56FFFC6"
+}
